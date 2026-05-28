@@ -66,6 +66,18 @@ export async function initSchema(): Promise<void> {
       notes TEXT
     );
 
+    CREATE TABLE IF NOT EXISTS garden_areas (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      description TEXT,
+      location TEXT,
+      status TEXT NOT NULL DEFAULT 'planned',
+      target_date TEXT,
+      plants TEXT,
+      notes TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
     CREATE TABLE IF NOT EXISTS tasks (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT NOT NULL,

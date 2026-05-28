@@ -2,15 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Sprout, Droplets, Bug, Apple, ClipboardList, LayoutDashboard } from 'lucide-react'
+import { Sprout, Droplets, Bug, Apple, ClipboardList, LayoutDashboard, Map } from 'lucide-react'
 
 const links = [
-  { href: '/',          label: 'Home',     icon: LayoutDashboard },
-  { href: '/plants',    label: 'Plants',   icon: Sprout },
-  { href: '/watering',  label: 'Water',    icon: Droplets },
-  { href: '/pests',     label: 'Pests',    icon: Bug },
-  { href: '/harvest',   label: 'Harvest',  icon: Apple },
-  { href: '/plan',      label: 'Plan',     icon: ClipboardList },
+  { href: '/',          label: 'Home',    icon: LayoutDashboard },
+  { href: '/plants',    label: 'Plants',  icon: Sprout },
+  { href: '/watering',  label: 'Water',   icon: Droplets },
+  { href: '/pests',     label: 'Pests',   icon: Bug },
+  { href: '/harvest',   label: 'Harvest', icon: Apple },
+  { href: '/areas',     label: 'Areas',   icon: Map },
+  { href: '/plan',      label: 'Plan',    icon: ClipboardList },
 ]
 
 export default function Nav() {
