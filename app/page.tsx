@@ -20,14 +20,16 @@ export default async function DashboardPage() {
       ORDER BY pl.observed_at DESC
     `),
     db.execute(`
-      SELECT p.name, p.water_frequency_days,
-        CAST(ROUND((julianday('now') - julianday(
-          (SELECT watered_at FROM watering_logs WHERE plant_id = p.id ORDER BY watered_at DESC LIMIT 1)
-        ))) AS INTEGER) AS days_since
-      FROM plants p
-      WHERE days_since >= p.water_frequency_days OR days_since IS NULL
+      SELECT name, water_frequency_days, days_since FROM (
+        SELECT p.name, p.water_frequency_days,
+          CAST(ROUND((julianday('now') - julianday(
+            (SELECT watered_at FROM watering_logs WHERE plant_id = p.id ORDER BY watered_at DESC LIMIT 1)
+          ))) AS INTEGER) AS days_since
+        FROM plants p
+      )
+      WHERE days_since >= water_frequency_days OR days_since IS NULL
       ORDER BY days_since DESC
-      LIMIT 5
+      LIMIT 9
     `),
   ])
 
