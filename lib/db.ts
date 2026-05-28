@@ -65,5 +65,16 @@ export async function initSchema(): Promise<void> {
       quantity TEXT,
       notes TEXT
     );
+
+    CREATE TABLE IF NOT EXISTS tasks (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      notes TEXT,
+      category TEXT NOT NULL DEFAULT 'general',
+      month TEXT NOT NULL,
+      week INTEGER,
+      done INTEGER NOT NULL DEFAULT 0,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
   `)
 }

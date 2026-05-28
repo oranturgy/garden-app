@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Sprout, Droplets, Bug, Apple } from 'lucide-react'
+import { Sprout, Droplets, Bug, Apple, ClipboardList } from 'lucide-react'
 
 const links = [
   { href: '/', label: 'Dashboard', icon: Sprout },
@@ -10,6 +10,7 @@ const links = [
   { href: '/watering', label: 'Watering', icon: Droplets },
   { href: '/pests', label: 'Pests', icon: Bug },
   { href: '/harvest', label: 'Harvest', icon: Apple },
+  { href: '/plan', label: 'Plan', icon: ClipboardList },
 ]
 
 export default function Nav() {
