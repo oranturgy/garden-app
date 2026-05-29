@@ -2,6 +2,8 @@ import { getDb, toObjects, initSchema } from '@/lib/db'
 import Link from 'next/link'
 import { Sprout, Droplets, Bug, Apple, AlertTriangle } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
+
 export default async function DashboardPage() {
   await initSchema()
   const db = getDb()
