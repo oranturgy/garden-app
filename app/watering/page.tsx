@@ -18,7 +18,8 @@ export default function WateringPage() {
     ])
     setPlants(p)
     setLogs(l)
-    if (p.length > 0 && !form.plant_id) setForm(f => ({ ...f, plant_id: String(p[0].id) }))
+    const loggable = (p as Plant[]).filter(pl => !pl.auto_watered)
+    if (loggable.length > 0 && !form.plant_id) setForm(f => ({ ...f, plant_id: String(loggable[0].id) }))
   }
 
   useEffect(() => { load() }, [])
@@ -41,7 +42,7 @@ export default function WateringPage() {
         return
       }
       setShowForm(false)
-      setForm({ plant_id: String(plants[0]?.id ?? ''), watered_at: '', notes: '' })
+      setForm({ plant_id: String(loggablePlants[0]?.id ?? ''), watered_at: '', notes: '' })
       setSaveMsg({ ok: true, text: 'Saved!' })
       load()
     } catch (e) {
@@ -54,7 +55,9 @@ export default function WateringPage() {
     load()
   }
 
-  const needsWater = plants.filter(p =>
+  const loggablePlants = plants.filter(p => !p.auto_watered)
+
+  const needsWater = loggablePlants.filter(p =>
     p.days_since_watered === null || p.days_since_watered === undefined ||
     p.days_since_watered >= p.water_frequency_days
   )
@@ -63,7 +66,7 @@ export default function WateringPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-green-900">Watering</h1>
-        <button onClick={() => setShowForm(true)} disabled={plants.length === 0}
+        <button onClick={() => setShowForm(true)} disabled={loggablePlants.length === 0}
           className="flex items-center gap-1.5 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 disabled:opacity-40">
           <Plus className="w-4 h-4" /> Log watering
         </button>
@@ -101,7 +104,7 @@ export default function WateringPage() {
               <div>
                 <label className="block text-xs text-stone-500 mb-1">Plant *</label>
                 <select className="input w-full" value={form.plant_id} onChange={e => setForm(f => ({ ...f, plant_id: e.target.value }))}>
-                  {plants.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
+                  {loggablePlants.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
                 </select>
               </div>
               <div>

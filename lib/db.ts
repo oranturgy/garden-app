@@ -37,6 +37,7 @@ export async function initSchema(): Promise<void> {
       sun_requirement TEXT DEFAULT 'full sun',
       water_frequency_days INTEGER DEFAULT 3,
       water_amount_liters REAL,
+      auto_watered INTEGER NOT NULL DEFAULT 0,
       notes TEXT,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
@@ -90,4 +91,10 @@ export async function initSchema(): Promise<void> {
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
   `)
+
+  try {
+    await db.execute(`ALTER TABLE plants ADD COLUMN auto_watered INTEGER NOT NULL DEFAULT 0`)
+  } catch {
+    // column already exists
+  }
 }

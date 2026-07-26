@@ -28,6 +28,7 @@ export default async function DashboardPage() {
             (SELECT watered_at FROM watering_logs WHERE plant_id = p.id ORDER BY watered_at DESC LIMIT 1)
           ))) AS INTEGER) AS days_since
         FROM plants p
+        WHERE p.auto_watered = 0
       )
       WHERE days_since >= water_frequency_days OR days_since IS NULL
       ORDER BY days_since DESC

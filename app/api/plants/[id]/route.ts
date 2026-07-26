@@ -25,11 +25,12 @@ export async function PUT(request: NextRequest, ctx: RouteContext<'/api/plants/[
 
   await db.execute({
     sql: `UPDATE plants SET name=?, type=?, variety=?, location=?, planted_date=?,
-          sun_requirement=?, water_frequency_days=?, water_amount_liters=?, notes=? WHERE id=?`,
+          sun_requirement=?, water_frequency_days=?, water_amount_liters=?, auto_watered=?, notes=? WHERE id=?`,
     args: [
       t.name, body.type, t.variety, t.location,
       body.planted_date ?? null, body.sun_requirement,
-      body.water_frequency_days, body.water_amount_liters ?? null, t.notes, id,
+      body.water_frequency_days, body.water_amount_liters ?? null,
+      body.auto_watered ? 1 : 0, t.notes, id,
     ],
   })
 
