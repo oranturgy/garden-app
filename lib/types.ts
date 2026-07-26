@@ -11,6 +11,7 @@ export interface Plant {
   planted_date: string | null
   sun_requirement: SunRequirement
   water_frequency_days: number
+  water_amount_liters: number | null
   notes: string | null
   created_at: string
   last_watered?: string | null

@@ -7,8 +7,19 @@ export async function PATCH(request: NextRequest, ctx: RouteContext<'/api/tasks/
   const db = getDb()
 
   await db.execute({
-    sql: `UPDATE tasks SET done = COALESCE(?, done), title = COALESCE(?, title) WHERE id = ?`,
-    args: [body.done !== undefined ? (body.done ? 1 : 0) : null, body.title ?? null, id],
+    sql: `UPDATE tasks SET
+            done  = COALESCE(?, done),
+            title = COALESCE(?, title),
+            notes = COALESCE(?, notes),
+            category = COALESCE(?, category)
+          WHERE id = ?`,
+    args: [
+      body.done !== undefined ? (body.done ? 1 : 0) : null,
+      body.title ?? null,
+      body.notes !== undefined ? (body.notes ?? null) : null,
+      body.category ?? null,
+      id,
+    ],
   })
 
   const task = await db.execute({ sql: 'SELECT * FROM tasks WHERE id = ?', args: [id] })

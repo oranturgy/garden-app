@@ -1,7 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk'
 
-const client = new Anthropic()
-
 const HEBREW_RE = /[֐-׿]/
 
 function hasHebrew(text: string): boolean {
@@ -21,6 +19,7 @@ export async function translateFields<T extends Record<string, string | null | u
   if (hebrewEntries.length === 0) return fields
 
   try {
+    const client = new Anthropic()
     const payload = Object.fromEntries(hebrewEntries)
 
     const response = await client.messages.create({

@@ -10,7 +10,7 @@ const SUN_OPTIONS: SunRequirement[] = ['full sun', 'partial shade', 'full shade'
 const emptyForm = {
   name: '', type: 'vegetable' as PlantType, variety: '', location: '',
   planted_date: '', sun_requirement: 'full sun' as SunRequirement,
-  water_frequency_days: 3, notes: '',
+  water_frequency_days: 3, water_amount_liters: '', notes: '',
 }
 
 export default function PlantsPage() {
@@ -32,6 +32,7 @@ export default function PlantsPage() {
       name: p.name, type: p.type, variety: p.variety ?? '',
       location: p.location ?? '', planted_date: p.planted_date ?? '',
       sun_requirement: p.sun_requirement, water_frequency_days: p.water_frequency_days,
+      water_amount_liters: p.water_amount_liters != null ? String(p.water_amount_liters) : '',
       notes: p.notes ?? '',
     })
     setEditing(p)
@@ -44,6 +45,7 @@ export default function PlantsPage() {
       variety: form.variety || null,
       location: form.location || null,
       planted_date: form.planted_date || null,
+      water_amount_liters: form.water_amount_liters ? parseFloat(form.water_amount_liters) : null,
       notes: form.notes || null,
     }
     if (editing) {
@@ -108,6 +110,12 @@ export default function PlantsPage() {
                 <input type="number" min={1} className="input w-full" value={form.water_frequency_days}
                   onChange={e => setForm(f => ({ ...f, water_frequency_days: parseInt(e.target.value) || 1 }))} />
               </div>
+              <div>
+                <label className="block text-xs text-stone-500 mb-1">Water amount (liters)</label>
+                <input type="number" min={0} step={0.5} className="input w-full" value={form.water_amount_liters}
+                  placeholder="e.g. 5"
+                  onChange={e => setForm(f => ({ ...f, water_amount_liters: e.target.value }))} />
+              </div>
               <div className="col-span-2">
                 <label className="block text-xs text-stone-500 mb-1">Notes</label>
                 <textarea className="input w-full h-20 resize-none" value={form.notes} onChange={e => setForm(f => ({ ...f, notes: e.target.value }))} />
@@ -138,6 +146,7 @@ export default function PlantsPage() {
                   {p.location && <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{p.location}</span>}
                   <span className="flex items-center gap-1"><Sun className="w-3 h-3" />{p.sun_requirement}</span>
                   <span className="flex items-center gap-1"><Droplets className="w-3 h-3" />Every {p.water_frequency_days}d
+                    {p.water_amount_liters != null ? ` · ${p.water_amount_liters}L` : ''}
                     {p.days_since_watered !== null && p.days_since_watered !== undefined
                       ? ` · Last: ${p.days_since_watered}d ago`
                       : ' · Never watered'}

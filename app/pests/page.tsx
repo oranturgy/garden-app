@@ -17,36 +17,52 @@ export default function PestsPage() {
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState(emptyForm)
   const [filter, setFilter] = useState<'all' | 'open' | 'resolved'>('open')
+  const [saveMsg, setSaveMsg] = useState<{ ok: boolean; text: string } | null>(null)
 
   async function load() {
-    const [p, l] = await Promise.all([
-      fetch('/api/plants').then(r => r.json()),
-      fetch('/api/pests').then(r => r.json()),
-    ])
-    setPlants(p)
-    setLogs(l)
-    if (p.length > 0 && !form.plant_id) setForm(f => ({ ...f, plant_id: String(p[0].id) }))
+    try {
+      const [p, l] = await Promise.all([
+        fetch('/api/plants').then(r => r.json()),
+        fetch('/api/pests').then(r => r.json()),
+      ])
+      setPlants(Array.isArray(p) ? p : [])
+      setLogs(Array.isArray(l) ? l : [])
+      if (Array.isArray(p) && p.length > 0 && !form.plant_id) setForm(f => ({ ...f, plant_id: String(p[0].id) }))
+    } catch (e) {
+      setSaveMsg({ ok: false, text: `Failed to load: ${e}` })
+    }
   }
 
   useEffect(() => { load() }, [])
 
   async function save() {
-    await fetch('/api/pests', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        plant_id: parseInt(form.plant_id),
-        observed_at: form.observed_at ? new Date(form.observed_at).toISOString() : new Date().toISOString(),
-        pest_or_disease: form.pest_or_disease,
-        severity: form.severity,
-        treatment: form.treatment || null,
-        resolved: form.resolved,
-        notes: form.notes || null,
-      }),
-    })
-    setShowForm(false)
-    setForm({ ...emptyForm, plant_id: String(plants[0]?.id ?? '') })
-    load()
+    setSaveMsg(null)
+    try {
+      const res = await fetch('/api/pests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plant_id: parseInt(form.plant_id),
+          observed_at: form.observed_at ? new Date(form.observed_at).toISOString() : new Date().toISOString(),
+          pest_or_disease: form.pest_or_disease,
+          severity: form.severity,
+          treatment: form.treatment || null,
+          resolved: form.resolved,
+          notes: form.notes || null,
+        }),
+      })
+      if (!res.ok) {
+        const body = await res.text()
+        setSaveMsg({ ok: false, text: `Error ${res.status}: ${body}` })
+        return
+      }
+      setShowForm(false)
+      setForm({ ...emptyForm, plant_id: String(plants[0]?.id ?? '') })
+      setSaveMsg({ ok: true, text: 'Saved!' })
+      load()
+    } catch (e) {
+      setSaveMsg({ ok: false, text: `Network error: ${e}` })
+    }
   }
 
   async function resolve(id: number) {
@@ -83,6 +99,12 @@ export default function PestsPage() {
           <Plus className="w-4 h-4" /> Log issue
         </button>
       </div>
+
+      {saveMsg && (
+        <div className={`mb-4 px-4 py-3 rounded-lg text-sm font-medium ${saveMsg.ok ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+          {saveMsg.text}
+        </div>
+      )}
 
       <div className="flex gap-2 mb-4">
         {(['open', 'resolved', 'all'] as const).map(f => (

@@ -36,6 +36,7 @@ export async function initSchema(): Promise<void> {
       planted_date TEXT,
       sun_requirement TEXT DEFAULT 'full sun',
       water_frequency_days INTEGER DEFAULT 3,
+      water_amount_liters REAL,
       notes TEXT,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );

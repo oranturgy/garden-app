@@ -1,0 +1,492 @@
+﻿[
+    {
+        "id":  89,
+        "title":  "Buy mulch ï¿½ wood chips (shavei etz)",
+        "notes":  "You need about 150kg total for 9 trees. Buy bags of wood chips (shavei etz) from any garden center (merkaz ganganut). One standard 50L bag covers roughly 1 tree. Buy 10 bags to be safe. Cost: roughly 15-25 NIS per bag. Also look for free sources: tree trimmers often give away wood chips, and neighbours put bags out before municipal green waste collection.",
+        "category":  "setup",
+        "month":  "2026-05",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 22:03:29"
+    },
+    {
+        "id":  90,
+        "title":  "Apply mulch around all 9 trees",
+        "notes":  "For each tree: pour a ring of wood chips around the trunk, about 1 meter wide and 10-15cm deep. IMPORTANT: keep the mulch away from touching the trunk itself ï¿½ leave a 10cm gap around the base of the trunk. Touching the trunk causes rot. It should look like a donut shape, not a volcano. Fallen leaves and shredded branches from your own trees can be mixed in ï¿½ they are excellent free mulch.",
+        "category":  "setup",
+        "month":  "2026-05",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 22:03:31"
+    },
+    {
+        "id":  91,
+        "title":  "Check and fix each tree water basin",
+        "notes":  "A water basin is a shallow ring of soil around the tree that holds water when you irrigate, so it soaks in instead of running off. For each tree, use a hoe or your hands to build up a small earth wall (10cm high) in a circle about 50-70cm from the trunk. Think of it like a bowl around the tree. Once done, apply the mulch inside the bowl.",
+        "category":  "setup",
+        "month":  "2026-05",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 22:03:38"
+    },
+    {
+        "id":  92,
+        "title":  "Water all 9 trees ï¿½ first proper watering",
+        "notes":  "HOW TO WATER CORRECTLY: Water slowly and deeply ï¿½ not fast. Place your hose at a trickle directly into the water basin. Count to 30 before moving to the next tree. Use the amounts from the Plants tab (Banana 20-30L, Papaya 15-20L, etc). Best time: early morning (6-8am) or evening after 6pm. NEVER water in the middle of the day ï¿½ the water evaporates before reaching the roots and can burn leaves. After watering, log it in the Water tab.",
+        "category":  "watering",
+        "month":  "2026-06",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:20"
+    },
+    {
+        "id":  93,
+        "title":  "Log each watering in the app",
+        "notes":  "Open the app, tap Water tab, tap Log watering, choose the tree you just watered, and tap Save. Do this for each tree after you water it. This is how the dashboard knows when each tree is next due. It takes 30 seconds per tree.",
+        "category":  "watering",
+        "month":  "2026-06",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:21"
+    },
+    {
+        "id":  94,
+        "title":  "Check the mulch is still in place",
+        "notes":  "Walk around each tree and make sure the mulch ring is still 10-15cm thick. Wind can move it. Press it down gently if needed. If it has thinned, add more from your remaining bags.",
+        "category":  "setup",
+        "month":  "2026-06",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:22"
+    },
+    {
+        "id":  95,
+        "title":  "Buy citrus fertilizer for Orange, Lemon, Red Pomelo",
+        "notes":  "Go to a garden center and ask for: Defat Hadrarim (???? ?????) or Patent Hadrarim (???? ?????). Buy 1 small bag (1-2kg) ï¿½ it will last the whole summer. These 3 trees need a different fertilizer than the others because they are citrus. Cost: around 30-50 NIS.",
+        "category":  "fertilizing",
+        "month":  "2026-06",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:24"
+    },
+    {
+        "id":  96,
+        "title":  "Buy general fertilizer for Banana and Papaya",
+        "notes":  "Ask for NPK 20-20-20 granular fertilizer. Buy 1kg ï¿½ it will last several months. This is a balanced fertilizer suitable for fast-growing tropical plants like Banana and Papaya. Cost: around 20-40 NIS.",
+        "category":  "fertilizing",
+        "month":  "2026-06",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:25"
+    },
+    {
+        "id":  97,
+        "title":  "Apply fertilizer to citrus trees (Orange, Lemon, Red Pomelo)",
+        "notes":  "HOW TO FERTILIZE: Scatter the fertilizer granules on the soil INSIDE the water basin ï¿½ do NOT put it right against the trunk. For a young tree: use about 2-3 tablespoons (not more ï¿½ too much burns roots). Then water the tree immediately after so the fertilizer dissolves into the soil. Do this for Orange, Lemon and Red Pomelo only.",
+        "category":  "fertilizing",
+        "month":  "2026-06",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:26"
+    },
+    {
+        "id":  98,
+        "title":  "Apply fertilizer to Banana and Papaya",
+        "notes":  "Same method as citrus: scatter 2-3 tablespoons of NPK 20-20-20 granules inside the water basin, away from the trunk. Water immediately after. Banana and Papaya are heavy feeders and will reward you quickly ï¿½ Papaya can start fruiting within a year.",
+        "category":  "fertilizing",
+        "month":  "2026-06",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:27"
+    },
+    {
+        "id":  99,
+        "title":  "Buy cherry tomato and cucumber seedlings",
+        "notes":  "Go to the garden center and buy: 2-3 cherry tomato seedlings (shteelei agvaniyot gargir) and 2-3 cucumber seedlings (shteelei melafefon). Buy seedlings (shteelim) not seeds ï¿½ it is too late in the season for seeds. Choose seedlings that look dark green and healthy, not yellow or wilted. Cost: 5-15 NIS per seedling.",
+        "category":  "planting",
+        "month":  "2026-06",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:28"
+    },
+    {
+        "id":  100,
+        "title":  "Plant tomatoes and cucumbers in the garden",
+        "notes":  "Choose a spot that gets morning sun but some afternoon shade (important in Israeli summer). Dig a hole twice the size of the pot the seedling came in. Mix in a handful of compost if you have it. Place the seedling in the hole so the soil level matches ï¿½ do not bury the stem. Fill in around it and press gently. Water well immediately. Stick a wooden stick next to each tomato plant and tie it loosely ï¿½ tomatoes need support as they grow.",
+        "category":  "planting",
+        "month":  "2026-06",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 22:04:29"
+    },
+    {
+        "id":  103,
+        "title":  "Buy drip irrigation kit ï¿½ 2 zones",
+        "notes":  "Your trees need different watering frequencies so you need 2 separate zones, each on its own timer. Zone A (every 2 days): Banana, Papaya, White Strawberry. Zone B (every 4-5 days): Orange, Lemon, Red Pomelo, Mango, Loquat, Apricot. What to buy at Ace, Home Center, or any garden center: 2x Tap timer / shaon hashkaya (???? ??????) ï¿½ one for each zone. A simple mechanical timer costs 80-150 NIS. A digital timer with more control costs 150-250 NIS. Buy 2 of the same model. 2x Tap splitter (mefatzlet, ?????) ï¿½ lets you connect both timers to one outdoor tap. Costs about 20 NIS. 2x Filter ï¿½ one per zone, mandatory, prevents blocked emitters. 2x Pressure reducer ï¿½ one per zone, recommended for Israeli water pressure. 30 meters of main PE pipe (16mm) ï¿½ enough for both zones. 25x Drip emitters ï¿½ various flow rates: buy 10x 4L/hour emitters (for Banana and Papaya) and 15x 2L/hour emitters (for all other trees). 1x Pipe punch tool. End caps, 4mm thin pipe, connectors. Total budget: 400-700 NIS for the complete system.",
+        "category":  "setup",
+        "month":  "2026-06",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 22:35:24"
+    },
+    {
+        "id":  104,
+        "title":  "Install Zone A: Banana, Papaya, White Strawberry (every 2 days)",
+        "notes":  "Zone A covers your 3 thirstiest plants. Step 1: Screw the tap splitter onto your outdoor tap. Connect filter + pressure reducer + Zone A timer to one outlet of the splitter. Step 2: Run the main 16mm pipe from the tap toward the Papaya and Lemon area (west side). Branch from there to the White Strawberry (northwest) and continue to the Banana (east side). Use U-pegs to keep pipe flat on the ground. Step 3: At Banana: punch 4 holes in the pipe and insert 4x 4L/hour emitters ï¿½ Banana needs the most water. At Papaya: punch 3 holes, use 3x 4L/hour emitters. At White Strawberry: punch 2 holes, use 2x 2L/hour emitters ï¿½ it needs less than the tropical trees. Step 4: Set Zone A timer to run every 2 days at 6am for 45 minutes. Result: Banana gets 12L, Papaya gets 9L, White Strawberry gets 3L per session ï¿½ close to their needs. Adjust run time up or down based on how the trees look after 2 weeks.",
+        "category":  "setup",
+        "month":  "2026-06",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 22:35:25"
+    },
+    {
+        "id":  105,
+        "title":  "Install Zone B: Citrus, Mango, Loquat, Apricot (every 4-5 days)",
+        "notes":  "Zone B covers the 6 trees that need less frequent watering. Step 1: Connect filter + pressure reducer + Zone B timer to the second outlet of the tap splitter. Step 2: Run the main 16mm pipe toward the Orange and Lemon (west side). Continue the pipe northward past the Mango, then northeast to the Loquat, then east to the Apricot and Red Pomelo. Step 3: Emitter placement ï¿½ Orange: 2x 2L/hour emitters. Lemon: 2x 2L/hour emitters. Red Pomelo: 2x 2L/hour emitters. Mango: 2x 2L/hour emitters. Loquat: 2x 2L/hour emitters. Apricot: 2x 2L/hour emitters. Step 4: Set Zone B timer to run every 4 days at 6am for 60 minutes. Result: each tree gets about 4L per session. This is a conservative amount ï¿½ after 2 weeks check if the soil inside the water basin still has moisture when you water again. If it is bone dry, increase to 90 minutes. Step 5: Run both zones manually and walk to every tree to confirm dripping. Log the first watering in the app and then let the timer take over from there.",
+        "category":  "setup",
+        "month":  "2026-06",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 22:35:27"
+    },
+    {
+        "id":  52,
+        "title":  "Check and refresh mulch around all 9 trees",
+        "notes":  "By July the mulch from June may have thinned or started breaking down. Walk around each tree and press your hand into the mulch â it should be at least 10cm deep. If you can easily feel the bare soil underneath, add more wood chips. You need about 3-4 bags (50L each) for a top-up. Same rule as before: donut shape around the tree, NOT touching the trunk. July is the hottest month â good mulch can cut your watering needs by 40%.",
+        "category":  "setup",
+        "month":  "2026-07",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:47:54"
+    },
+    {
+        "id":  55,
+        "title":  "HERB GARDEN: Choose and prepare the spot",
+        "notes":  "Find a spot on the south side of the house â south-facing areas in Israel get the most sun. The area should be at least 1.5m x 1.5m. Step 1: Remove all weeds by pulling them out from the root, not just cutting the tops. Step 2: Use a garden fork or hoe to loosen the soil to about 20cm deep â dig in and turn the soil over. Hard compacted soil prevents roots from growing. Step 3: If the soil looks very dry, pale, or hard like clay, mix in one bag of compost (adama meshuperet, sold at any garden center for about 20 NIS). Step 4: Water the area and leave it 2-3 days before planting.",
+        "category":  "planting",
+        "month":  "2026-07",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:47:56"
+    },
+    {
+        "id":  53,
+        "title":  "Fertilize citrus trees again (Orange, Lemon, Red Pomelo)",
+        "notes":  "Second summer dose for your 3 citrus trees. Use the same product as June: Patent Hadrarim or Defat Hadrarim. Method: scatter 2-3 tablespoons in a circle inside the water basin, away from the trunk. Then water immediately â this dissolves the granules and carries nutrients to the roots. Without watering, fertilizer can burn the roots. Citrus trees are actively developing fruit in summer â this feeding is important.",
+        "category":  "fertilizing",
+        "month":  "2026-07",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:47:55"
+    },
+    {
+        "id":  54,
+        "title":  "Fertilize Banana and Papaya again",
+        "notes":  "Second dose of NPK 20-20-20 for Banana and Papaya. Both are tropical fast-growers that need regular feeding. A well-fed Banana produces a new leaf every 1-2 weeks and can grow visibly taller in a single month. A well-fed Papaya can start fruiting within its first year. Signs they need food: leaves look pale green or yellowish instead of deep green. Method: 2-3 tablespoons inside the water basin, water immediately after.",
+        "category":  "fertilizing",
+        "month":  "2026-07",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:47:56"
+    },
+    {
+        "id":  56,
+        "title":  "HERB GARDEN: Buy herb seedlings",
+        "notes":  "Go to a garden center (merkaz ganganut) and buy seedlings (shteelim) of: Zaatar (××¢×ª×¨) â 2 plants, Rosemary / Rozmarin (×¨××××¨××) â 1 plant, Sage / Marva (××¨×××) â 1 plant, Mint / Nana (× ×¢× ×¢) â 1 plant BUT keep it in its pot and never plant it directly in the ground â mint spreads aggressively and will take over the whole garden, Parsley / Petrozilya (×¤××¨××××××) â 2 plants, Basil / Rihan (×¨×××) â 2 plants, plant in a spot that gets afternoon shade as basil burns in full Israeli summer sun. Choose seedlings that are dark green and stand upright â avoid yellowed or wilted ones. Budget: 50-100 NIS total.",
+        "category":  "planting",
+        "month":  "2026-07",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:47:58"
+    },
+    {
+        "id":  57,
+        "title":  "HERB GARDEN: Plant all herbs",
+        "notes":  "Space each plant 30-40cm apart so they have room to grow. For each plant: dig a hole the same depth as the plastic pot it came in. Turn the pot upside down, squeeze gently, and the plant will slide out with its root ball. Place it in the hole so the top of the root ball is level with the surrounding soil â do not bury the stem. Fill the hole and press the soil firmly around the base. Water each plant well after planting. For the first week, water every day until the herbs are established. After that, 2-3 times per week is enough. Place the mint pot in a corner and water it separately.",
+        "category":  "planting",
+        "month":  "2026-07",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 08:47:59"
+    },
+    {
+        "id":  58,
+        "title":  "Inspect all trees for pests and disease",
+        "notes":  "Walk slowly around each tree and look carefully. Check: the top and BOTTOM of leaves (insects hide underneath), the trunk for any unusual spots or oozing, the soil at the base for signs of insects, and any new growth for clusters of small bugs. Common problems in Israeli summer: Aphids (kinnah, ××× ×) â tiny green or black insects clustered on new growth, make leaves curl. Treatment: spray with soapy water (1 teaspoon dish soap in 1 liter water). Powdery mildew â white powdery coating on leaves. Treatment: spray with diluted baking soda (1 teaspoon in 1 liter water). Scale insects â small brown bumps on stems. Treatment: wipe with a cloth dipped in rubbing alcohol. If unsure, photograph it and log in the Pests tab.",
+        "category":  "general",
+        "month":  "2026-07",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:00"
+    },
+    {
+        "id":  59,
+        "title":  "Water extra deeply after any day above 37C",
+        "notes":  "On any day the temperature exceeds 37C, your trees lose water much faster than normal through their leaves. The morning after a very hot day, give every tree an extra watering â double the usual amount. Banana: 40-50L. Papaya: 30-40L. Citrus trees: 25-30L. Mango: 20-25L. Apricot and Loquat: 15-20L. Signs a tree is heat-stressed: leaves curl inward like a taco, leaf tips turn brown and dry, new leaves look limp even in the morning. If you see these signs, water immediately regardless of schedule. A stressed tree is much more vulnerable to pests and disease.",
+        "category":  "watering",
+        "month":  "2026-08",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:01"
+    },
+    {
+        "id":  60,
+        "title":  "Check Papaya for fruit and flower development",
+        "notes":  "Papaya is one of the fastest fruiting trees â it can produce fruit within its first year if healthy. Look at the junction between the trunk and the leaf stems: small green round bumps appear there first. These are the beginning of fruit. Do not remove them. Papaya flowers are small and creamy-white. Important: some Papaya trees are male (only produce pollen, no fruit) and some are female (produce fruit). You can tell them apart: female flowers are round and fat right where they join the stem; male flowers are on long thin stalks. If you only have male flowers, you need a female tree nearby for fruit. Log what you see in the app notes.",
+        "category":  "general",
+        "month":  "2026-08",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:01"
+    },
+    {
+        "id":  61,
+        "title":  "HERB GARDEN: First harvest and pruning",
+        "notes":  "By August your herbs should be growing well and ready for their first proper harvest. The golden rule: never cut more than one-third of any plant at once â cutting too much stresses the plant. For rosemary and sage: cut the tips of branches about 10cm long. New growth will sprout from below the cut. For parsley and zaatar: pick stems from the outside of the plant, leaving the center to keep growing. For basil: pick leaves from the top down, and pinch off any flowers immediately when they appear â flowering means the plant is going to seed, which makes leaves lose flavor. Harvesting regularly actually makes herbs grow faster and bushier.",
+        "category":  "planting",
+        "month":  "2026-08",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:02"
+    },
+    {
+        "id":  62,
+        "title":  "Plan and mark the winter vegetable bed location",
+        "notes":  "In September you will build your second concept area â the vegetable bed. This month, choose the exact spot and prepare it so you are ready. Requirements: gets direct sunlight for at least 6 hours a day (essential for vegetables), close to a water source, NOT directly under the canopy of a large tree (tree roots will compete with vegetables). Size: aim for 2m x 3m (6 square meters). This month: clear the area of all weeds, rocks and debris. If there is grass, dig it up completely including roots. Leave the soil exposed to the sun for a few weeks â this kills weed seeds near the surface. Mark the corners with sticks so you know the boundaries.",
+        "category":  "setup",
+        "month":  "2026-08",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:02"
+    },
+    {
+        "id":  63,
+        "title":  "Top up mulch and check water basins on all trees",
+        "notes":  "August is the hottest month of the year. Do a full check on all 9 trees. For each tree check: 1. Mulch depth â should be 10cm minimum. Top up if needed. 2. Water basin â the small earth wall around the tree should still be intact. Rain, wind and foot traffic can erode it. Rebuild with a hoe if needed. 3. The area around the trunk â clear any weeds that have grown under the mulch. Weeds compete for water and nutrients. 4. Check that drip emitters (if you have them) are actually dripping â place your hand underneath to feel the water. A blocked dripper means one tree gets no water.",
+        "category":  "setup",
+        "month":  "2026-08",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:03"
+    },
+    {
+        "id":  64,
+        "title":  "Reduce watering frequency as temperatures cool",
+        "notes":  "From mid-September, temperatures drop and trees need less water. To change a tree schedule in the app: tap the Plants tab, tap Edit on the tree, change the water frequency number and save. New schedules: Banana â change from every 2 days to every 3 days. Papaya â from every 2 days to every 3 days. White Strawberry â from every 2 days to every 3 days. Mango â from every 3 days to every 5 days. Orange, Lemon, Red Pomelo â from every 4 days to every 6 days. Apricot and Loquat â from every 5 days to every 7 days. If it rains more than 15mm, skip the next scheduled watering â the rain counts.",
+        "category":  "watering",
+        "month":  "2026-09",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:03"
+    },
+    {
+        "id":  65,
+        "title":  "VEGETABLE BED: Prepare and enrich the soil",
+        "notes":  "Now it is time to build your vegetable bed. At the spot you cleared in August: Step 1: Loosen the soil to 30cm deep using a fork or spade â really dig in and turn it over completely. Break up any large clods of earth. Step 2: Add 2 bags of compost (adama meshuperet) and 1 bag of aged manure (zvevel, ×××) if available â mix these through the loosened soil. These add nutrients that vegetables need. Step 3: Level the surface with a rake so it is flat. Step 4: Water the prepared bed thoroughly. Step 5: Wait 3-5 days before planting â this lets the soil settle and any remaining weed seeds sprout (so you can remove them before planting).",
+        "category":  "setup",
+        "month":  "2026-09",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:05"
+    },
+    {
+        "id":  66,
+        "title":  "VEGETABLE BED: Plant winter vegetables from seedlings",
+        "notes":  "Buy seedlings of cool-season vegetables: Lettuce (chasa, ××¡×) â buy 6-8 plants, space 25cm apart. Spinach (tered, ×ª×¨×) â buy 4-6 plants, space 20cm apart. Broccoli (brokoli, ××¨××§×××) â buy 3-4 plants, space 50cm apart (they get big). Swiss chard / Mangold (×× ××××) â buy 4-6 plants, space 30cm apart. How to plant: dig a hole slightly larger than the root ball, remove the seedling from its pot, place in the hole at the same soil level as it was in the pot, fill in and press firmly, water well. Water every day for the first week, then every 2-3 days. These vegetables love the September-March Israeli climate and need very little attention once established.",
+        "category":  "planting",
+        "month":  "2026-09",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:07"
+    },
+    {
+        "id":  67,
+        "title":  "VEGETABLE BED: Sow root vegetables from seed directly",
+        "notes":  "Root vegetables must be sown directly â they cannot be transplanted because moving them damages the root. Buy seed packets of: Carrots (gezer, ×××¨) â thin orange carrots are easiest for beginners. Radishes (tznon, ×¦× ××) â the fastest vegetable you can grow, ready in 3-4 weeks. Beets (selek, ×¡××§) â striking dark red. How to sow seeds: drag your finger along the soil to make a shallow groove about 1cm deep. Drop seeds along the groove every 3-5cm. Cover with a thin layer of soil. Water VERY gently with a fine spray â strong water jet washes seeds away. Keep soil moist every day until seedlings appear (7-14 days). Once seedlings are 5cm tall, pull out every other one so the remaining plants have space to grow their roots.",
+        "category":  "planting",
+        "month":  "2026-09",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:08"
+    },
+    {
+        "id":  68,
+        "title":  "Third fertilization: all fruit trees",
+        "notes":  "Last summer feeding before trees slow down for autumn. Use the same products as before: Patent Hadrarim for the 3 citrus trees, NPK 20-20-20 for Banana and Papaya. For Mango, Loquat and Apricot use half the normal dose (1 tablespoon instead of 2-3) â these trees need less than the others. After this September feeding, do not fertilize again until November. Over-fertilizing in autumn pushes new soft growth that gets damaged by cool nights. Water all trees after applying fertilizer.",
+        "category":  "fertilizing",
+        "month":  "2026-09",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:09"
+    },
+    {
+        "id":  69,
+        "title":  "Harvest check: what is ready in September?",
+        "notes":  "Walk your garden and check for ripe fruit. Papaya: ripe when the skin turns from green to yellow-orange and the flesh gives slightly when pressed near the top. Cut with scissors â do not pull. Banana: harvest the entire bunch when the bananas are full and rounded (not flat-sided) and just starting to turn yellow at the tips. After cutting, hang the bunch somewhere cool â they ripen off the tree. Pomelo: still developing in September, not ready yet. Lemon and Orange: still ripening, taste one to check. Log any harvests in the Harvest tab with the quantity and a note about quality.",
+        "category":  "general",
+        "month":  "2026-09",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:09"
+    },
+    {
+        "id":  70,
+        "title":  "Service drip irrigation system before rain season",
+        "notes":  "October starts the rain season but rains are irregular â you still need irrigation between rains. Service the system now: Step 1: Run the system and walk to each tree. Hold your hand under each dripper to feel if water comes out. A dripper that is not dripping is blocked. To fix: pull the dripper out of the pipe, soak it in a cup of water for 10 minutes, put back. If it still does not work, buy a replacement dripper (costs a few NIS). Step 2: Look at all pipes for cracks, splits, or holes. A cracked pipe loses water and one tree may get flooded while another gets nothing. Fix with a drip connector from the garden center. Step 3: Find the filter at the main connection (usually a small cylinder you can unscrew). Open it, remove the mesh filter inside, rinse under running water, replace.",
+        "category":  "setup",
+        "month":  "2026-10",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:10"
+    },
+    {
+        "id":  71,
+        "title":  "Harvest citrus: Orange, Lemon, Red Pomelo begin ripening",
+        "notes":  "Israeli citrus starts ripening from October onwards and continues through winter. How to know if citrus is ready: 1. Color â oranges turn orange, lemons turn fully yellow, pomelos turn pale yellow. 2. Weight â ripe citrus feels heavier than it looks. 3. The twist test â grasp the fruit and twist gently. If it comes off easily, it is ready. If it resists, wait another week. 4. Taste test â cut one open and taste before harvesting everything. Citrus does not ripen further after picking, unlike bananas. Lemons can be picked slightly green â they will finish yellowing on the counter. Store citrus at room temperature for 1-2 weeks or refrigerate for up to 2 months. Log harvests in the app.",
+        "category":  "general",
+        "month":  "2026-10",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:10"
+    },
+    {
+        "id":  72,
+        "title":  "VEGETABLE BED: Thin seedlings and add compost",
+        "notes":  "By October your September sowings are well-established. Thinning is essential â overcrowded plants compete for space, light and water and none of them develop well. For carrots and beets: when seedlings are 5-8cm tall, thin so plants are 8-10cm apart. Pull the unwanted ones gently â you can eat young carrot and beet greens in a salad. For lettuce: thin to 25cm apart. For radishes: thin to 5cm apart â radishes are ready in 3-4 weeks, so harvesting the biggest ones IS the thinning. After thinning: sprinkle a handful of compost around the remaining plants and water it in. This gives them a boost.",
+        "category":  "planting",
+        "month":  "2026-10",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:11"
+    },
+    {
+        "id":  73,
+        "title":  "Assess all 9 trees â note their condition in the app",
+        "notes":  "This is your end-of-summer review. For each tree, go to the Plants tab, tap the tree, and add notes answering: Did it grow taller since June? Are the leaves healthy and dark green? Did it produce any fruit? Any pest damage you noticed and treated? Any concerns going into winter? This assessment is important for two reasons: 1. It helps you know which trees need extra care over winter. 2. It gives you a reference point to compare with next year. Trees that look stressed going into winter (pale leaves, little growth, pest damage) should get a protective mulch top-up and extra attention. Trees that look strong and healthy are ready for winter rest.",
+        "category":  "general",
+        "month":  "2026-10",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:12"
+    },
+    {
+        "id":  74,
+        "title":  "Buy agrotextile frost cover for Papaya and Banana",
+        "notes":  "Papaya and Banana come from tropical climates and can be damaged if temperatures drop below 8-10 degrees Celsius at night. Most of Israel rarely gets this cold, but in cold winters or in inland areas, it can happen. Buy agrotextile fabric (bad agrotextil, ×× ×××¨×××§×¡×××) â a white lightweight breathable fabric available at garden centers. Buy one roll of at least 2m x 5m. Cost: 30-60 NIS. You only use it on the 2-3 coldest nights per year and remove it each morning. It works by trapping the warmth that the soil releases at night, creating a slightly warmer microclimate around the plant. A regular bedsheet works too in an emergency.",
+        "category":  "setup",
+        "month":  "2026-10",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:13"
+    },
+    {
+        "id":  75,
+        "title":  "Winter fertilization for all trees",
+        "notes":  "One last feeding to prepare the trees for winter. In November use a different fertilizer than summer: look for one with low nitrogen and high potassium â the NPK numbers on the bag should show the K (last number) is highest, for example 5-10-20. Ask at the garden center for defan horef (××©× ×××¨×£) or winter fertilizer. Potassium strengthens cell walls, improves cold tolerance, and promotes root development. Same method as always: scatter around the water basin, away from the trunk, then water immediately. Use 3-4 tablespoons per tree. After this feeding, do not fertilize again until March when growth resumes.",
+        "category":  "fertilizing",
+        "month":  "2026-11",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:15"
+    },
+    {
+        "id":  76,
+        "title":  "Light pruning: remove dead and crossing branches",
+        "notes":  "November is the ideal pruning time â trees are slowing down and pruning wounds heal before the cold sets in. What to prune: 1. Dead branches â brown, dry, snap easily, no green when you scratch the bark. 2. Crossing branches â two branches that rub against each other create wounds where disease can enter. Cut the smaller of the two. 3. Branches pointing inward toward the center of the tree â a good tree has an open center so sun and air can reach inside. How to prune: use clean, sharp pruning shears (misprayim, ××¡×¤×¨×××). Wipe the blade with alcohol between trees to avoid spreading disease. Cut at a 45-degree angle just above a growth bud or side branch. Important exceptions: do NOT prune Banana (it does not need it) and only remove truly dead wood from citrus trees.",
+        "category":  "general",
+        "month":  "2026-11",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:16"
+    },
+    {
+        "id":  77,
+        "title":  "VEGETABLE BED: Harvest first crops, plant second wave",
+        "notes":  "By November your vegetable bed should be producing. What to harvest: Radishes â ready when you can see a round red bulb at the soil surface. Pull straight up. Lettuce â pick outer leaves, leaving the center to regrow. Spinach â harvest outer leaves regularly. Broccoli â cut the main head when tight and dark green, before any flowers open. After cutting the main head, side shoots will produce smaller heads for weeks. After harvesting an area, prepare it for a second planting: loosen the soil with a fork, add a handful of compost, and plant the next crop. You can do 2-3 rounds of radishes and lettuce through winter. This is called succession planting.",
+        "category":  "planting",
+        "month":  "2026-11",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:17"
+    },
+    {
+        "id":  78,
+        "title":  "Protect Papaya and Banana on cold nights",
+        "notes":  "Check the weather forecast every evening in November and December. When the night temperature is forecast below 10 degrees Celsius: Before sunset â drape the agrotextile fabric loosely over the Papaya and Banana plants. Do not wrap tightly â the plant needs some air circulation. Secure the edges with stones or tent pegs so wind does not blow it off. In the morning, once temperature rises above 15 degrees, remove the fabric completely â the plant needs sunlight and air during the day. If you forget and leave it for 2-3 days, the plant can overheat or get fungal disease. Check the forecast daily during cold snaps.",
+        "category":  "setup",
+        "month":  "2026-11",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:17"
+    },
+    {
+        "id":  79,
+        "title":  "Plant winter flowers to attract pollinators",
+        "notes":  "Pollinators (bees and butterflies) are essential for your fruit trees to produce fruit â they carry pollen between flowers. November is perfect for planting winter flowers in Israel that attract them. Buy seedlings of: Calendula (kadurgold, ×§×××¨××××) â bright orange and yellow, also repels pests naturally. Petunia (petunia) â purple, pink, white, very easy. Pansy (amnon ve tamar, ××× ×× ××ª××¨) â small colorful flowers. Snapdragon (leviyat hayam, ×××××ª ×××) â tall and colorful. Plant them around the edges of your herb garden or along pathways. Water 2-3 times per week. These flowers need almost no care and will bloom all winter, making your garden beautiful and productive.",
+        "category":  "planting",
+        "month":  "2026-11",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:19"
+    },
+    {
+        "id":  80,
+        "title":  "Reduce watering significantly for winter",
+        "notes":  "December is cool and Israel gets some rain. Trees are growing slowly and need much less water. Update schedules in the app (Plants tab, Edit each tree): Banana â every 6-7 days. Papaya â every 5-6 days. White Strawberry â every 4-5 days. Mango â every 10-14 days. Orange, Lemon, Red Pomelo â every 8-10 days. Apricot and Loquat â every 10-14 days. After any significant rainfall (more than 20mm, visible in your weather app): skip the next scheduled watering entirely. Overwatering in winter is actually more dangerous than underwatering â cold wet soil promotes root rot. When in doubt, stick your finger 5cm into the soil near the tree â if it feels damp, do not water yet.",
+        "category":  "watering",
+        "month":  "2026-12",
+        "week":  1,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:20"
+    },
+    {
+        "id":  81,
+        "title":  "Peak citrus harvest: Orange, Lemon, Red Pomelo",
+        "notes":  "December is the best month for Israeli citrus. The fruit is at its sweetest and most flavorful now. Harvest method: hold the fruit and give a gentle twist â it should come off cleanly. If it resists, wait another few days. Do not pull by force. After picking, the tree will redirect energy into building next years fruit. How to store: citrus keeps at room temperature for 2 weeks or in the refrigerator for up to 2 months. You can also squeeze lemons and freeze the juice in ice cube trays â one cube per recipe. Log everything in the Harvest tab. At the end of the season, look at your harvest total â it is satisfying to see how productive even young trees can be.",
+        "category":  "general",
+        "month":  "2026-12",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:20"
+    },
+    {
+        "id":  82,
+        "title":  "VEGETABLE BED: Sow garlic and plant second wave",
+        "notes":  "December is the traditional time to plant garlic in Israel â it grows through winter and is harvested in May. To plant garlic: buy a head of garlic (from a garden center or grocery store, but garden center garlic is better). Separate it into individual cloves. Push each clove into the soil about 5cm deep, pointed end UP, 10cm apart in rows. Cover with soil. Water once. That is it â garlic needs almost no attention until harvest. Also plant: another round of radish seeds (ready in 3-4 weeks), more lettuce seedlings, onion bulbs (batzal, ××¦×) using the same method as garlic. December vegetables are the easiest of the year â the cool weather and occasional rain do most of the work.",
+        "category":  "planting",
+        "month":  "2026-12",
+        "week":  2,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:22"
+    },
+    {
+        "id":  83,
+        "title":  "HERB GARDEN: Winter maintenance",
+        "notes":  "Your herb garden in December: Rosemary, zaatar and sage are thriving â these Mediterranean herbs love cool dry Israeli winters. Keep harvesting regularly and they will continue to grow. Parsley also loves winter â it may be producing more than you can use. Basil will likely die when cold nights arrive â this is completely normal. You can try to save one plant by bringing it indoors near a sunny window. Mint looks dead or very sparse in winter â do NOT throw it away or remove the pot. It is dormant and will come back vigorously in March when temperatures warm. Give all herbs a light trim this month: cut any long leggy stems back by one-third to encourage bushy compact growth in spring.",
+        "category":  "planting",
+        "month":  "2026-12",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:22"
+    },
+    {
+        "id":  84,
+        "title":  "Year-end garden review and photo record",
+        "notes":  "Take photos of every tree and both concept areas. Compare to how they looked in June when you started. Write notes in each plant profile in the app answering: Did this tree grow well? Did it produce fruit? Did it have any pest or disease problems? What would you do differently? This is your year-1 record and will be invaluable for planning next year. Celebrate: you kept 9 trees alive through an Israeli summer (the hardest part), built 2 new garden areas from scratch, and grew your own vegetables and herbs. That is a real achievement for a first year.",
+        "category":  "general",
+        "month":  "2026-12",
+        "week":  3,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:23"
+    },
+    {
+        "id":  85,
+        "title":  "Plan 2027: what to add to the garden next year?",
+        "notes":  "Now you have a full season of experience. Use it to plan 2027. Questions to ask yourself: Which trees thrived and which struggled? Do I want to expand the vegetable bed? Was 2 hours per week enough or do I want to do more or less? Easy additions to consider for 2027: A compost bin (kompost, ×§×××¤××¡×) â turns kitchen scraps into free fertilizer, saves money and is easy to manage. A fig tree (te-ena, ×ª×× ×) â extremely easy in Israel, drought-tolerant once established, produces abundantly. A pomegranate tree (rimon, ×¨××××) â beautiful flowers, very drought-tolerant, little care needed. Expand the vegetable bed by 1-2 square meters. Start seeds indoors in February for an earlier planting season.",
+        "category":  "general",
+        "month":  "2026-12",
+        "week":  4,
+        "done":  0,
+        "created_at":  "2026-05-29 08:48:25"
+    }
+]

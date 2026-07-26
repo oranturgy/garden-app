@@ -28,12 +28,12 @@ export async function POST(request: NextRequest) {
   })
 
   const result = await db.execute({
-    sql: `INSERT INTO plants (name, type, variety, location, planted_date, sun_requirement, water_frequency_days, notes)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    sql: `INSERT INTO plants (name, type, variety, location, planted_date, sun_requirement, water_frequency_days, water_amount_liters, notes)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       t.name, body.type ?? 'other', t.variety, t.location,
       body.planted_date ?? null, body.sun_requirement ?? 'full sun',
-      body.water_frequency_days ?? 3, t.notes,
+      body.water_frequency_days ?? 3, body.water_amount_liters ?? null, t.notes,
     ],
   })
 

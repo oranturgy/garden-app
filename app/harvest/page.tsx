@@ -9,6 +9,7 @@ export default function HarvestPage() {
   const [logs, setLogs] = useState<HarvestLog[]>([])
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({ plant_id: '', harvested_at: '', quantity: '', notes: '' })
+  const [saveMsg, setSaveMsg] = useState<{ ok: boolean; text: string } | null>(null)
 
   async function load() {
     const [p, l] = await Promise.all([
@@ -23,19 +24,30 @@ export default function HarvestPage() {
   useEffect(() => { load() }, [])
 
   async function save() {
-    await fetch('/api/harvest', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        plant_id: parseInt(form.plant_id),
-        harvested_at: form.harvested_at ? new Date(form.harvested_at).toISOString() : new Date().toISOString(),
-        quantity: form.quantity || null,
-        notes: form.notes || null,
-      }),
-    })
-    setShowForm(false)
-    setForm({ plant_id: String(plants[0]?.id ?? ''), harvested_at: '', quantity: '', notes: '' })
-    load()
+    setSaveMsg(null)
+    try {
+      const res = await fetch('/api/harvest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plant_id: parseInt(form.plant_id),
+          harvested_at: form.harvested_at ? new Date(form.harvested_at).toISOString() : new Date().toISOString(),
+          quantity: form.quantity || null,
+          notes: form.notes || null,
+        }),
+      })
+      if (!res.ok) {
+        const body = await res.text()
+        setSaveMsg({ ok: false, text: `Error ${res.status}: ${body}` })
+        return
+      }
+      setShowForm(false)
+      setForm({ plant_id: String(plants[0]?.id ?? ''), harvested_at: '', quantity: '', notes: '' })
+      setSaveMsg({ ok: true, text: 'Saved!' })
+      load()
+    } catch (e) {
+      setSaveMsg({ ok: false, text: `Network error: ${e}` })
+    }
   }
 
   async function remove(id: number) {
@@ -58,6 +70,12 @@ export default function HarvestPage() {
           <Plus className="w-4 h-4" /> Log harvest
         </button>
       </div>
+
+      {saveMsg && (
+        <div className={`mb-4 px-4 py-3 rounded-lg text-sm font-medium ${saveMsg.ok ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+          {saveMsg.text}
+        </div>
+      )}
 
       {showForm && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
