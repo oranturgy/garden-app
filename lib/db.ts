@@ -97,4 +97,10 @@ export async function initSchema(): Promise<void> {
   } catch {
     // column already exists
   }
+
+  try {
+    await db.execute(`ALTER TABLE pest_logs ADD COLUMN catalog_key TEXT`)
+  } catch {
+    // column already exists
+  }
 }

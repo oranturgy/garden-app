@@ -24,12 +24,12 @@ export async function POST(request: NextRequest) {
   })
 
   const result = await db.execute({
-    sql: `INSERT INTO pest_logs (plant_id, observed_at, pest_or_disease, severity, treatment, resolved, notes)
-          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    sql: `INSERT INTO pest_logs (plant_id, observed_at, pest_or_disease, severity, treatment, resolved, notes, catalog_key)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       body.plant_id, body.observed_at ?? new Date().toISOString(),
       t.pest_or_disease, body.severity ?? 'low',
-      t.treatment, body.resolved ? 1 : 0, t.notes,
+      t.treatment, body.resolved ? 1 : 0, t.notes, body.catalog_key ?? null,
     ],
   })
 

@@ -37,6 +37,19 @@ export interface PestLog {
   treatment: string | null
   resolved: number
   notes: string | null
+  catalog_key: string | null
+}
+
+export interface GardenArea {
+  id: number
+  name: string
+  description: string | null
+  location: string | null
+  status: 'planned' | 'in-progress' | 'complete'
+  target_date: string | null
+  plants: string | null
+  notes: string | null
+  created_at: string
 }
 
 export interface HarvestLog {
