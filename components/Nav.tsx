@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Sprout, Droplets, Bug, Apple, ClipboardList, LayoutDashboard, Map, ClipboardCheck } from 'lucide-react'
+import { Sprout, Droplets, Bug, Apple, ClipboardList, LayoutDashboard, Map, ClipboardCheck, LandPlot } from 'lucide-react'
 
 const links = [
   { href: '/',          label: 'Home',    icon: LayoutDashboard },
@@ -13,6 +13,7 @@ const links = [
   { href: '/areas',     label: 'Areas',   icon: Map },
   { href: '/plan',      label: 'Plan',    icon: ClipboardList },
   { href: '/inspect',   label: 'Inspect', icon: ClipboardCheck },
+  { href: '/sketch',    label: 'Sketch',  icon: LandPlot },
 ]
 
 export default function Nav() {
@@ -52,7 +53,7 @@ export default function Nav() {
 
       {/* ── Mobile bottom tab bar ── */}
       <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-stone-200 z-50 pb-safe">
-        <div className="grid grid-cols-8 h-16">
+        <div className="grid grid-cols-9 h-16">
           {links.map(({ href, label, icon: Icon }) => {
             const active = pathname === href
             return (
