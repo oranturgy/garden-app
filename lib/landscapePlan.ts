@@ -75,7 +75,6 @@ export const ZONES: LandscapeZone[] = [
       { name: 'Large shade tree', description: 'Big multi-trunk tree with tie-down straps, right off the patio. Not planted here — inherited with the property, not currently tracked in the app.' },
       { name: 'Small Mango', description: 'Young staked sapling, dead-center of the lawn, its own drip line.' },
       { name: 'Storage shed & hedge border', description: 'Shed against the house; a dense hedge runs along one edge of the lawn.' },
-      { name: 'Young bananas', description: 'A couple of young banana plants near the irrigation valve manifold, close to the Loquat corner.' },
     ],
   },
   {
@@ -87,7 +86,7 @@ export const ZONES: LandscapeZone[] = [
     closesAt: 'back at the vegetable bed — completing the loop',
     blurb: 'The most established fruiting corner of the garden, ending back where the whole tour started.',
     features: [
-      { name: 'Bananas', description: 'More young banana plants continuing from the north corner.' },
+      { name: 'Bananas', description: 'Young banana plants — this side of the garden only, not the north/backyard.' },
       { name: 'Apricot & Red Pomelo', description: 'A mature Apricot with a full round canopy and its own drip ring, with the Red Pomelo planted right beside it.' },
       { name: 'Utility nook', description: 'Storage cabinet, BBQ grill, an old crib frame against the house — not a planting area.' },
       { name: 'Tecoma', description: 'Right against the house, near the utility nook — a follow-up photo confirmed a full, healthy canopy. Earlier read of a blurry video frame as "cut back hard" was a misread, not a real issue.' },
@@ -116,4 +115,15 @@ export interface FutureIdea {
   addedAt: string
 }
 
-export const FUTURE_IDEAS: FutureIdea[] = []
+export const FUTURE_IDEAS: FutureIdea[] = [
+  {
+    title: 'Vegetable bed — winter transition prep',
+    description: "Work compost/soil enrichment into the bed before the winter crop rotation (per the area's own summer June–Aug / winter Sept–March plan). Already queued as task #65 (\"VEGETABLE BED: Prepare and enrich the soil\", September week 1) — whatever comes out of the current health diagnosis should fold into this same pass rather than being a separate fix.",
+    addedAt: '2026-08-01',
+  },
+  {
+    title: 'ID the two unknown plants',
+    description: "The big backyard shade tree (not planted here) and the south-side yellow-flowering shrub are both still unidentified. Low effort, no rush — a photo whenever convenient would let us know what we're dealing with for any future pruning/keep-or-remove decisions.",
+    addedAt: '2026-08-01',
+  },
+]

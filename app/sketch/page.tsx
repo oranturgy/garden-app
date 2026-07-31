@@ -33,7 +33,6 @@ const EDGE_CHIPS: Record<string, { label: string; flagged?: boolean }[]> = {
     { label: 'Patio & balcony' },
     { label: 'Shade tree (not planted here)' },
     { label: 'Small Mango' },
-    { label: 'Bananas' },
   ],
   west: [
     { label: 'Cypress hedge', flagged: true },
