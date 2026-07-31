@@ -43,7 +43,7 @@ const EDGE_CHIPS: Record<string, { label: string; flagged?: boolean }[]> = {
   east: [
     { label: 'Bananas' },
     { label: 'Apricot + Red Pomelo' },
-    { label: 'Tecoma', flagged: true },
+    { label: 'Tecoma' },
   ],
   south: [
     { label: 'Bougainvillea bed' },

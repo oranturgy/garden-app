@@ -90,7 +90,7 @@ export const ZONES: LandscapeZone[] = [
       { name: 'Bananas', description: 'More young banana plants continuing from the north corner.' },
       { name: 'Apricot & Red Pomelo', description: 'A mature Apricot with a full round canopy and its own drip ring, with the Red Pomelo planted right beside it.' },
       { name: 'Utility nook', description: 'Storage cabinet, BBQ grill, an old crib frame against the house — not a planting area.' },
-      { name: 'Tecoma', description: 'Right against the house, cut back hard — just bare trunk with a small tuft of new shoots at the base. Worth watching to see if it recovers.', flagged: true },
+      { name: 'Tecoma', description: 'Right against the house, near the utility nook — a follow-up photo confirmed a full, healthy canopy. Earlier read of a blurry video frame as "cut back hard" was a misread, not a real issue.' },
     ],
   },
 ]
