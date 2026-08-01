@@ -1,4 +1,5 @@
 import { CORNERS, ZONES, UNPLACED, FUTURE_IDEAS } from '@/lib/landscapePlan'
+import { CheckCircle2 } from 'lucide-react'
 
 function cornerByKey(key: string) {
   return CORNERS.find(c => c.key === key)!
@@ -31,11 +32,12 @@ function Chip({ children, flagged }: { children: React.ReactNode; flagged?: bool
 const EDGE_CHIPS: Record<string, { label: string; flagged?: boolean }[]> = {
   north: [
     { label: 'Patio & balcony' },
-    { label: 'Shade tree (not planted here)' },
+    { label: 'Carob tree (male, not planted here)' },
     { label: 'Small Mango' },
   ],
   west: [
     { label: 'Cypress hedge', flagged: true },
+    { label: 'Podranea ricasoliana' },
     { label: 'Papaya · Lemon · Orange · Tibouchina (behind hedge)' },
     { label: 'Laundry-room entrance' },
   ],
@@ -46,7 +48,7 @@ const EDGE_CHIPS: Record<string, { label: string; flagged?: boolean }[]> = {
   ],
   south: [
     { label: 'Bougainvillea bed' },
-    { label: 'Yellow-flowering shrub' },
+    { label: 'Tecoma stans' },
     { label: 'Carport' },
   ],
 }
@@ -136,17 +138,19 @@ export default function SketchPage() {
       </div>
 
       {/* Not yet pinned down */}
-      <div className="mb-8">
-        <h2 className="text-xs font-semibold uppercase tracking-wide text-stone-400 mb-2">Not yet pinned down</h2>
-        <div className="flex flex-col gap-2">
-          {UNPLACED.map(item => (
-            <div key={item.title} className="bg-white rounded-xl border border-stone-200 p-4">
-              <p className="text-sm font-semibold text-stone-800">{item.title}</p>
-              <p className="text-xs text-stone-500 mt-0.5">{item.description}</p>
-            </div>
-          ))}
+      {UNPLACED.length > 0 && (
+        <div className="mb-8">
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-stone-400 mb-2">Not yet pinned down</h2>
+          <div className="flex flex-col gap-2">
+            {UNPLACED.map(item => (
+              <div key={item.title} className="bg-white rounded-xl border border-stone-200 p-4">
+                <p className="text-sm font-semibold text-stone-800">{item.title}</p>
+                <p className="text-xs text-stone-500 mt-0.5">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Future ideas */}
       <div>
@@ -157,9 +161,12 @@ export default function SketchPage() {
           </div>
         ) : (
           <div className="flex flex-col gap-2">
-            {FUTURE_IDEAS.map(idea => (
-              <div key={idea.title} className="bg-white rounded-xl border border-stone-200 p-4">
-                <p className="text-sm font-semibold text-stone-800">{idea.title}</p>
+            {[...FUTURE_IDEAS].sort((a, b) => Number(!!a.done) - Number(!!b.done)).map(idea => (
+              <div key={idea.title} className={`rounded-xl border p-4 ${idea.done ? 'bg-stone-50 border-stone-100 opacity-70' : 'bg-white border-stone-200'}`}>
+                <div className="flex items-center gap-1.5">
+                  {idea.done && <CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" />}
+                  <p className={`text-sm font-semibold ${idea.done ? 'text-stone-500 line-through' : 'text-stone-800'}`}>{idea.title}</p>
+                </div>
                 <p className="text-xs text-stone-500 mt-0.5">{idea.description}</p>
                 <p className="text-[10px] text-stone-400 mt-1">{idea.addedAt}</p>
               </div>
