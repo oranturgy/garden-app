@@ -47,6 +47,7 @@ const EDGE_CHIPS: Record<string, { label: string; flagged?: boolean }[]> = {
     { label: 'Tecoma' },
   ],
   south: [
+    { label: 'Herb Garden (planned)' },
     { label: 'Bougainvillea bed' },
     { label: 'Tecoma stans' },
     { label: 'Carport' },

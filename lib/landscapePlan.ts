@@ -26,7 +26,7 @@ export const CORNERS: LandscapeCorner[] = [
   { key: 'nw', label: 'West ↔ North', landmark: 'White Strawberry' },
   { key: 'ne', label: 'North ↔ East', landmark: 'Loquat' },
   { key: 'sw', label: 'South ↔ West', landmark: 'Sea squill bed', flag: 'dormant' },
-  { key: 'se', label: 'East ↔ South', landmark: 'Vegetable bed', flag: 'attention' },
+  { key: 'se', label: 'East ↔ South', landmark: 'Vegetable bed' },
 ]
 
 export const ZONES: LandscapeZone[] = [
@@ -39,11 +39,11 @@ export const ZONES: LandscapeZone[] = [
     closesAt: 'the dormant sea-squill (חצבים) bed near the carport',
     blurb: "The path from the house corner out to the carport. Mostly ornamental beds bordered in stone, plus the raised vegetable bed that's been struggling since planting.",
     features: [
-      { name: 'Vegetable bed', description: 'Raised wood-framed bed — tomatoes, cucumbers, pumpkins, hot pepper, zucchini, planted July 3. Sparse and bare-looking on video; flagged as not yet healthy.', flagged: true },
+      { name: 'Vegetable bed', description: "Raised wood-framed bed — tomatoes, cucumbers, pumpkins, hot pepper, zucchini, planted July 3 into peak summer heat with no mulch, watered as one flat dose for the whole bed. A follow-up photo showed only 1-2 seedlings survived, likely from drying out between waterings. Switched to daily watering and mulched on 2026-08-01 to help the survivors and prep the soil ahead of the September winter-crop reset (task #65)." },
       { name: 'Young sapling bed', description: 'Small tree/shrub bordered with loose stones, right along the path.' },
+      { name: 'Herb Garden (planned)', description: "A rock-circle bed between the front door and the bougainvillea bed — confirmed as the spot for the app's planned Herb Garden, going in next week (tasks #156/#157)." },
       { name: 'Bougainvillea bed', description: 'Rock-circle bed with dark mulched soil, bougainvillea and a few small shrubs, some sunken terracotta pots.' },
       { name: 'Tecoma stans', description: 'Yellow-flowering shrub in a rock-circle bed near the bike parking — a separate plant from the Tecoma on the east side of the house.' },
-      { name: 'Herb Garden (planned)', description: "The app's Herb Garden concept area is sited on this side of the house but isn't planted yet, so nothing to see here on camera." },
       { name: 'Carport', description: "Bikes and kids' toys — not a planting area, but the walking route through it." },
     ],
   },
@@ -56,7 +56,7 @@ export const ZONES: LandscapeZone[] = [
     closesAt: 'the White Strawberry tree by the fence',
     blurb: 'A tight run along the house wall, screened by a row of columnar cypress ("fence trees"). The car parks on the far side of that hedge, which is why it never shows up on camera from this side.',
     features: [
-      { name: 'Cypress hedge', description: 'One tree in the row has gone visibly brown/dry while its neighbors are healthy green — worth a closer look (root issue, borer, or just that one tree dying back).', flagged: true },
+      { name: 'Cypress hedge', description: 'One stem in the row has died back completely (uniform brown, no yellowing gradient) while its immediate neighbors stay healthy — a close-up photo confirmed this is likely cypress canker, not overwatering or mites. Pruning it out is queued as task #161.', flagged: true },
       { name: 'Papaya, Lemon, Orange, Tibouchina', description: "All behind the hedge per description — only Papaya's broad leaves were clearly identifiable through the gaps on camera; Lemon, Orange and Tibouchina weren't individually confirmed on video." },
       { name: 'Podranea ricasoliana', description: "A pink trumpet vine scrambling up through the cypress hedge — the pink bloom glimpsed on camera was this, not Tibouchina as first guessed (Tibouchina's bloom is purple, not pink)." },
       { name: 'Field Strawberry (1 of 2 boxes)', description: 'A scalloped terracotta window box with young seedlings, sitting on a wooden utility-box cover near this side\'s covered porch. The second box is on the east side.' },
