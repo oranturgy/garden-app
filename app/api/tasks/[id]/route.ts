@@ -22,6 +22,10 @@ export async function PATCH(request: NextRequest, ctx: RouteContext<'/api/tasks/
     ],
   })
 
+  if (body.done) {
+    await db.execute({ sql: `UPDATE heat_alerts SET resolved = 1 WHERE task_id = ?`, args: [id] })
+  }
+
   const task = await db.execute({ sql: 'SELECT * FROM tasks WHERE id = ?', args: [id] })
   return Response.json(toObject(task))
 }

@@ -1,4 +1,4 @@
-import { getDb, toObjects, initSchema } from '@/lib/db'
+import { getDb, toObjects, toObject, initSchema } from '@/lib/db'
 import Link from 'next/link'
 import { Sprout, Droplets, Bug, Apple, AlertTriangle } from 'lucide-react'
 
@@ -8,7 +8,7 @@ export default async function DashboardPage() {
   await initSchema()
   const db = getDb()
 
-  const [plantsResult, wateringResult, pestsResult, needsWaterResult] = await Promise.all([
+  const [plantsResult, wateringResult, pestsResult, needsWaterResult, heatAlertResult] = await Promise.all([
     db.execute('SELECT COUNT(*) AS n FROM plants'),
     db.execute(`
       SELECT w.*, p.name AS plant_name FROM watering_logs w
@@ -34,16 +34,27 @@ export default async function DashboardPage() {
       ORDER BY days_since DESC
       LIMIT 9
     `),
+    db.execute(`SELECT * FROM heat_alerts WHERE resolved = 0 ORDER BY alert_date DESC LIMIT 1`),
   ])
 
   const plantCount = Number((plantsResult.rows[0] as unknown as Record<string, unknown>)['n'] ?? 0)
   const recentWatering = toObjects(wateringResult) as Array<{ id: number; plant_name: string; watered_at: string }>
   const openPests = toObjects(pestsResult) as Array<{ id: number; plant_name: string; pest_or_disease: string; severity: string }>
   const needsWater = toObjects(needsWaterResult) as Array<{ name: string; water_frequency_days: number; days_since: number | null }>
+  const heatAlert = toObject(heatAlertResult) as { id: number; alert_date: string; max_temp_c: number } | null
 
   return (
     <div>
       <h1 className="text-2xl font-bold text-green-900 mb-6">Garden Dashboard</h1>
+
+      {heatAlert && (
+        <Link href="/plan" className="block bg-red-50 border border-red-200 rounded-xl p-4 mb-6 hover:border-red-300 transition-colors">
+          <p className="font-semibold text-red-800 flex items-center gap-2">
+            🌡️ Hit {heatAlert.max_temp_c}°C on {heatAlert.alert_date} — water extra deeply today
+          </p>
+          <p className="text-xs text-red-600 mt-0.5">Tap to see the watering amounts in the Plan tab →</p>
+        </Link>
+      )}
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
         <StatCard icon={<Sprout className="w-6 h-6 text-green-600" />} label="Plants" value={plantCount} href="/plants" />

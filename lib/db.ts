@@ -90,6 +90,15 @@ export async function initSchema(): Promise<void> {
       done INTEGER NOT NULL DEFAULT 0,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
+
+    CREATE TABLE IF NOT EXISTS heat_alerts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      alert_date TEXT NOT NULL UNIQUE,
+      max_temp_c REAL NOT NULL,
+      task_id INTEGER REFERENCES tasks(id),
+      resolved INTEGER NOT NULL DEFAULT 0,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
   `)
 
   try {
