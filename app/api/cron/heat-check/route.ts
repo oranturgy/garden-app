@@ -13,6 +13,15 @@ function monthWeekFor(date: Date): { month: string; week: number } {
   return { month, week }
 }
 
+function getJerusalemHour(date: Date): number {
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Jerusalem',
+    hour: 'numeric',
+    hourCycle: 'h23',
+  })
+  return parseInt(formatter.format(date), 10)
+}
+
 export async function GET(request: NextRequest) {
   const secret = process.env.CRON_SECRET
   if (secret) {
@@ -28,8 +37,16 @@ export async function GET(request: NextRequest) {
     return Response.json({ error: 'Weather fetch failed' }, { status: 502 })
   }
   const weather = await weatherRes.json()
-  const alertDate: string = weather.daily.time[0]
-  const maxTemp: number = weather.daily.temperature_2m_max[0]
+
+  // With past_days=1&forecast_days=1, daily arrays are [previous date, current date].
+  // 18:00-23:59 Jerusalem time: today's max is already known, so check the current date.
+  // 00:00-18:00: today's max isn't final yet, so check the previous date instead.
+  const jerusalemHour = getJerusalemHour(new Date())
+  const useCurrentDate = jerusalemHour >= 18
+  const dayIndex = useCurrentDate ? 1 : 0
+
+  const alertDate: string = weather.daily.time[dayIndex]
+  const maxTemp: number = weather.daily.temperature_2m_max[dayIndex]
 
   if (maxTemp < HEAT_THRESHOLD_C) {
     return Response.json({ triggered: false, alertDate, maxTemp })
@@ -52,7 +69,7 @@ export async function GET(request: NextRequest) {
   const taskResult = await db.execute({
     sql: `INSERT INTO tasks (title, notes, category, month, week, done) VALUES (?, ?, ?, ?, ?, 0)`,
     args: [
-      `🌡️ Hit ${maxTemp}°C yesterday — water extra deeply`,
+      `🌡️ Hit ${maxTemp}°C ${useCurrentDate ? 'today' : 'yesterday'} — water extra deeply`,
       WATERING_NOTES,
       'watering',
       month,
