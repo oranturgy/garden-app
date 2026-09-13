@@ -56,7 +56,7 @@ export const ZONES: LandscapeZone[] = [
     closesAt: 'the White Strawberry tree by the fence',
     blurb: 'A tight run along the house wall, screened by a row of columnar cypress ("fence trees"). The car parks on the far side of that hedge, which is why it never shows up on camera from this side.',
     features: [
-      { name: 'Cypress hedge', description: 'One stem in the row has died back completely (uniform brown, no yellowing gradient) while its immediate neighbors stay healthy — a close-up photo confirmed this is likely cypress canker, not overwatering or mites. Pruning it out is queued as task #161.', flagged: true },
+      { name: 'Cypress hedge', description: 'One stem had died back from what a close-up photo confirmed was likely cypress canker. Fully removed 2026-08-15 (task #161) — worth keeping an eye on the rest of the row afterward in case it spreads to a neighboring stem.' },
       { name: 'Papaya, Lemon, Orange, Tibouchina', description: "All behind the hedge per description — only Papaya's broad leaves were clearly identifiable through the gaps on camera; Lemon, Orange and Tibouchina weren't individually confirmed on video." },
       { name: 'Podranea ricasoliana', description: "A pink trumpet vine scrambling up through the cypress hedge — the pink bloom glimpsed on camera was this, not Tibouchina as first guessed (Tibouchina's bloom is purple, not pink)." },
       { name: 'Field Strawberry (1 of 2 boxes)', description: 'A scalloped terracotta window box with young seedlings, sitting on a wooden utility-box cover near this side\'s covered porch. The second box is on the east side.' },
@@ -90,6 +90,7 @@ export const ZONES: LandscapeZone[] = [
     features: [
       { name: 'Bananas', description: 'Young banana plants — this side of the garden only, not the north/backyard.' },
       { name: 'Apricot & Red Pomelo', description: 'A mature Apricot with a full round canopy and its own drip ring, with the Red Pomelo planted right beside it.' },
+      { name: 'Rue (פיגם)', description: 'Two rue plants added 2026-09-13 right next to the Apricot & Red Pomelo. Drought-tolerant Mediterranean herb, but on establishment-phase watering for the first few weeks before tapering to a lighter long-term schedule.' },
       { name: 'Utility nook', description: 'Storage cabinet, BBQ grill, an old crib frame against the house — not a planting area.' },
       { name: 'Field Strawberry (2 of 2) & Cranberry', description: 'The second Field Strawberry window box sits right next to the Cranberry, planted in a black bucket to control soil acidity — both tucked close to the utility nook.' },
       { name: 'Tecoma', description: 'Right against the house, near the utility nook — a follow-up photo confirmed a full, healthy canopy. Earlier read of a blurry video frame as "cut back hard" was a misread, not a real issue.' },
@@ -117,5 +118,20 @@ export const FUTURE_IDEAS: FutureIdea[] = [
     description: 'The big backyard tree turned out to be a male carob (חרוב), and the south-side yellow-flowering shrub is Tecoma stans.',
     addedAt: '2026-08-01',
     done: true,
+  },
+  {
+    title: 'Extend automatic irrigation',
+    description: 'Extend the drip system beyond the original 5 plants (Apricot, Banana, Loquat, Mango, Red Pomelo) to cover White Strawberry, Tibouchina, Lemon, Orange, Papaya, Herb Garden, and the Vegetable Bed — queued as task #155, now unblocked since the Herb Garden is planted.',
+    addedAt: '2026-08-15',
+  },
+  {
+    title: 'Fill the cypress gap with a trellis + Podranea vine',
+    description: 'The gap left by the removed cypress stem (west fence hedge) gets a slim obelisk trellis with the existing Podranea ricasoliana trained or propagated onto it, instead of replanting another cypress — queued as tasks #170 (find/buy the trellis) and #169 (install it).',
+    addedAt: '2026-08-15',
+  },
+  {
+    title: 'West side: shade-tolerant ornamental bed',
+    description: 'The large bare rock-bordered area on the west side (near the storage shelf, under the pergola shade) becomes a shade-tolerant ornamental bed (ferns, hosta-type plants) rather than a seating nook. Sequenced after the irrigation extension and the cypress-gap trellis project — queued as task #175.',
+    addedAt: '2026-08-15',
   },
 ]

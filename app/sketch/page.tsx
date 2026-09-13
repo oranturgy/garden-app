@@ -36,7 +36,7 @@ const EDGE_CHIPS: Record<string, { label: string; flagged?: boolean }[]> = {
     { label: 'Small Mango' },
   ],
   west: [
-    { label: 'Cypress hedge', flagged: true },
+    { label: 'Cypress hedge' },
     { label: 'Podranea ricasoliana' },
     { label: 'Papaya · Lemon · Orange · Tibouchina (behind hedge)' },
     { label: 'Laundry-room entrance' },
@@ -44,6 +44,7 @@ const EDGE_CHIPS: Record<string, { label: string; flagged?: boolean }[]> = {
   east: [
     { label: 'Bananas' },
     { label: 'Apricot + Red Pomelo' },
+    { label: 'Rue (x2)' },
     { label: 'Tecoma' },
   ],
   south: [
