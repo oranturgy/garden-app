@@ -1,5 +1,6 @@
 {
   "crons": [
-    { "path": "/api/cron/heat-check", "schedule": "0 4 * * *" }
+    { "path": "/api/cron/heat-check", "schedule": "0 4 * * *" },
+    { "path": "/api/cron/rain-check", "schedule": "5 4 * * *" }
   ]
 }

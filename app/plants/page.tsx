@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { Plant, PlantType, SunRequirement } from '@/lib/types'
-import { Plus, Trash2, Edit2, Droplets, Sun, MapPin, Zap } from 'lucide-react'
+import { Plus, Trash2, Edit2, Droplets, Sun, MapPin, Zap, CloudRain } from 'lucide-react'
+import { rainSkipActive } from '@/lib/rain'
 
 const PLANT_TYPES: PlantType[] = ['vegetable', 'herb', 'fruit', 'flower', 'tree', 'other']
 const SUN_OPTIONS: SunRequirement[] = ['full sun', 'partial shade', 'full shade']
@@ -10,7 +11,7 @@ const SUN_OPTIONS: SunRequirement[] = ['full sun', 'partial shade', 'full shade'
 const emptyForm = {
   name: '', type: 'vegetable' as PlantType, variety: '', location: '',
   planted_date: '', sun_requirement: 'full sun' as SunRequirement,
-  water_frequency_days: 3, water_amount_liters: '', auto_watered: false, notes: '',
+  water_frequency_days: 3, water_amount_liters: '', auto_watered: false, rain_exposed: true, notes: '',
 }
 
 export default function PlantsPage() {
@@ -34,6 +35,7 @@ export default function PlantsPage() {
       sun_requirement: p.sun_requirement, water_frequency_days: p.water_frequency_days,
       water_amount_liters: p.water_amount_liters != null ? String(p.water_amount_liters) : '',
       auto_watered: !!p.auto_watered,
+      rain_exposed: p.rain_exposed !== 0,
       notes: p.notes ?? '',
     })
     setEditing(p)
@@ -124,6 +126,13 @@ export default function PlantsPage() {
                   On automatic irrigation (hide from manual watering log &amp; alerts)
                 </label>
               </div>
+              <div className="col-span-2 flex items-center gap-2">
+                <input id="rain_exposed" type="checkbox" checked={form.rain_exposed}
+                  onChange={e => setForm(f => ({ ...f, rain_exposed: e.target.checked }))} />
+                <label htmlFor="rain_exposed" className="text-xs text-stone-600">
+                  Gets rain (outdoors, not under a roof) — rain counts as watering
+                </label>
+              </div>
               <div className="col-span-2">
                 <label className="block text-xs text-stone-500 mb-1">Notes</label>
                 <textarea className="input w-full h-20 resize-none" value={form.notes} onChange={e => setForm(f => ({ ...f, notes: e.target.value }))} />
@@ -162,6 +171,12 @@ export default function PlantsPage() {
                           : ' · Never watered'}
                       </span>
                   }
+                  {!p.auto_watered && rainSkipActive(p.rain_skip_until) && (
+                    <span className="flex items-center gap-1 text-sky-600"><CloudRain className="w-3 h-3" />Rain-soaked — no watering until {p.rain_skip_until}</span>
+                  )}
+                  {p.rain_exposed === 0 && (
+                    <span className="flex items-center gap-1 text-stone-400"><CloudRain className="w-3 h-3" />Under roof / indoor — rain doesn&apos;t count</span>
+                  )}
                 </div>
                 {p.notes && <p className="text-xs text-stone-600 line-clamp-2">{p.notes}</p>}
                 <div className="flex gap-2 mt-auto pt-2">

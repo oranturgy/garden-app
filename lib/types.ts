@@ -13,6 +13,8 @@ export interface Plant {
   water_frequency_days: number
   water_amount_liters: number | null
   auto_watered: number
+  rain_exposed?: number
+  rain_skip_until?: string | null
   notes: string | null
   created_at: string
   last_watered?: string | null

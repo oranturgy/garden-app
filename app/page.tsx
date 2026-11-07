@@ -1,14 +1,16 @@
 import { getDb, toObjects, toObject, initSchema } from '@/lib/db'
 import Link from 'next/link'
 import { Sprout, Droplets, Bug, Apple, AlertTriangle } from 'lucide-react'
+import { addDays, jerusalemToday, rainTierLabel } from '@/lib/rain'
 
 export const dynamic = 'force-dynamic'
 
 export default async function DashboardPage() {
   await initSchema()
   const db = getDb()
+  const today = jerusalemToday()
 
-  const [plantsResult, wateringResult, pestsResult, needsWaterResult, heatAlertResult] = await Promise.all([
+  const [plantsResult, wateringResult, pestsResult, needsWaterResult, heatAlertResult, rainEventResult] = await Promise.all([
     db.execute('SELECT COUNT(*) AS n FROM plants'),
     db.execute(`
       SELECT w.*, p.name AS plant_name FROM watering_logs w
@@ -21,7 +23,7 @@ export default async function DashboardPage() {
       WHERE pl.resolved = 0
       ORDER BY pl.observed_at DESC
     `),
-    db.execute(`
+    db.execute({ args: [today], sql: `
       SELECT name, water_frequency_days, days_since FROM (
         SELECT p.name, p.water_frequency_days,
           CAST(ROUND((julianday('now') - julianday(
@@ -29,12 +31,17 @@ export default async function DashboardPage() {
           ))) AS INTEGER) AS days_since
         FROM plants p
         WHERE p.auto_watered = 0
+          AND (p.rain_skip_until IS NULL OR p.rain_skip_until <= ?)
       )
       WHERE days_since >= water_frequency_days OR days_since IS NULL
       ORDER BY days_since DESC
       LIMIT 9
-    `),
+    ` }),
     db.execute(`SELECT * FROM heat_alerts WHERE resolved = 0 ORDER BY alert_date DESC LIMIT 1`),
+    db.execute({
+      sql: `SELECT * FROM rain_events WHERE rain_date >= ? OR (skip_until IS NOT NULL AND skip_until > ?) ORDER BY rain_date DESC LIMIT 1`,
+      args: [addDays(today, -2), today],
+    }),
   ])
 
   const plantCount = Number((plantsResult.rows[0] as unknown as Record<string, unknown>)['n'] ?? 0)
@@ -42,6 +49,7 @@ export default async function DashboardPage() {
   const openPests = toObjects(pestsResult) as Array<{ id: number; plant_name: string; pest_or_disease: string; severity: string }>
   const needsWater = toObjects(needsWaterResult) as Array<{ name: string; water_frequency_days: number; days_since: number | null }>
   const heatAlert = toObject(heatAlertResult) as { id: number; alert_date: string; max_temp_c: number } | null
+  const rainEvent = toObject(rainEventResult) as { rain_date: string; rain_mm: number; tier: string; skip_until: string | null; plants_credited: string | null } | null
 
   return (
     <div>
@@ -53,6 +61,19 @@ export default async function DashboardPage() {
             🌡️ Hit {heatAlert.max_temp_c}°C on {heatAlert.alert_date} — water extra deeply today
           </p>
           <p className="text-xs text-red-600 mt-0.5">Tap to see the watering amounts in the Plan tab →</p>
+        </Link>
+      )}
+
+      {rainEvent && (
+        <Link href="/watering" className="block bg-sky-50 border border-sky-200 rounded-xl p-4 mb-6 hover:border-sky-300 transition-colors">
+          <p className="font-semibold text-sky-800">
+            🌧️ {rainEvent.rain_mm} mm of rain on {rainEvent.rain_date} — watering plan updated
+          </p>
+          <p className="text-xs text-sky-700 mt-0.5">{rainTierLabel(rainEvent.tier)}{rainEvent.skip_until ? ` (until ${rainEvent.skip_until})` : ''}.</p>
+          {rainEvent.plants_credited && (
+            <p className="text-xs text-sky-600 mt-1">Counted as watered: {rainEvent.plants_credited}</p>
+          )}
+          <p className="text-xs text-sky-600 mt-1">Drip, indoor and under-roof plants are unchanged — water those as usual.</p>
         </Link>
       )}
 

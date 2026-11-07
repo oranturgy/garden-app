@@ -1,4 +1,4 @@
-import { getDb, toObject } from '@/lib/db'
+import { getDb, toObject, initSchema } from '@/lib/db'
 import { translateFields } from '@/lib/translate'
 import { NextRequest } from 'next/server'
 
@@ -14,6 +14,7 @@ export async function GET(_req: NextRequest, ctx: RouteContext<'/api/plants/[id]
 export async function PUT(request: NextRequest, ctx: RouteContext<'/api/plants/[id]'>) {
   const { id } = await ctx.params
   const body = await request.json()
+  await initSchema()
   const db = getDb()
 
   const t = await translateFields({
@@ -25,12 +26,15 @@ export async function PUT(request: NextRequest, ctx: RouteContext<'/api/plants/[
 
   await db.execute({
     sql: `UPDATE plants SET name=?, type=?, variety=?, location=?, planted_date=?,
-          sun_requirement=?, water_frequency_days=?, water_amount_liters=?, auto_watered=?, notes=? WHERE id=?`,
+          sun_requirement=?, water_frequency_days=?, water_amount_liters=?, auto_watered=?, notes=?,
+          rain_exposed=COALESCE(?, rain_exposed) WHERE id=?`,
     args: [
       t.name, body.type, t.variety, t.location,
       body.planted_date ?? null, body.sun_requirement,
       body.water_frequency_days, body.water_amount_liters ?? null,
-      body.auto_watered ? 1 : 0, t.notes, id,
+      body.auto_watered ? 1 : 0, t.notes,
+      body.rain_exposed === undefined || body.rain_exposed === null ? null : (body.rain_exposed ? 1 : 0),
+      id,
     ],
   })
 

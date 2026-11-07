@@ -1,4 +1,4 @@
-import { getDb, toObjects, toObject } from '@/lib/db'
+import { getDb, toObjects, toObject, initSchema } from '@/lib/db'
 import { translateFields } from '@/lib/translate'
 import { NextRequest } from 'next/server'
 
@@ -18,6 +18,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   const body = await request.json()
+  await initSchema()
   const db = getDb()
 
   const t = await translateFields({
@@ -28,13 +29,14 @@ export async function POST(request: NextRequest) {
   })
 
   const result = await db.execute({
-    sql: `INSERT INTO plants (name, type, variety, location, planted_date, sun_requirement, water_frequency_days, water_amount_liters, auto_watered, notes)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    sql: `INSERT INTO plants (name, type, variety, location, planted_date, sun_requirement, water_frequency_days, water_amount_liters, auto_watered, notes, rain_exposed)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       t.name, body.type ?? 'other', t.variety, t.location,
       body.planted_date ?? null, body.sun_requirement ?? 'full sun',
       body.water_frequency_days ?? 3, body.water_amount_liters ?? null,
       body.auto_watered ? 1 : 0, t.notes,
+      body.rain_exposed === false || body.rain_exposed === 0 ? 0 : 1,
     ],
   })
 

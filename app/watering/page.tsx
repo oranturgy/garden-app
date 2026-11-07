@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Plant, WateringLog } from '@/lib/types'
 import { Plus, Trash2, Droplets } from 'lucide-react'
+import { rainSkipActive } from '@/lib/rain'
 
 export default function WateringPage() {
   const [plants, setPlants] = useState<Plant[]>([])
@@ -58,8 +59,10 @@ export default function WateringPage() {
   const loggablePlants = plants.filter(p => !p.auto_watered)
 
   const needsWater = loggablePlants.filter(p =>
-    p.days_since_watered === null || p.days_since_watered === undefined ||
-    p.days_since_watered >= p.water_frequency_days
+    !rainSkipActive(p.rain_skip_until) && (
+      p.days_since_watered === null || p.days_since_watered === undefined ||
+      p.days_since_watered >= p.water_frequency_days
+    )
   )
 
   return (

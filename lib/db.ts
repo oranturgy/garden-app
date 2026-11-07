@@ -112,4 +112,30 @@ export async function initSchema(): Promise<void> {
   } catch {
     // column already exists
   }
+
+  // 1 = outdoors and gets rain; 0 = indoor / under a roof (rain-check cron ignores it)
+  try {
+    await db.execute(`ALTER TABLE plants ADD COLUMN rain_exposed INTEGER NOT NULL DEFAULT 1`)
+  } catch {
+    // column already exists
+  }
+
+  // After heavy rain: first date (YYYY-MM-DD) the plant can be due for watering again
+  try {
+    await db.execute(`ALTER TABLE plants ADD COLUMN rain_skip_until TEXT`)
+  } catch {
+    // column already exists
+  }
+
+  await db.execute(`
+    CREATE TABLE IF NOT EXISTS rain_events (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      rain_date TEXT NOT NULL UNIQUE,
+      rain_mm REAL NOT NULL,
+      tier TEXT NOT NULL,
+      skip_until TEXT,
+      plants_credited TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    )
+  `)
 }
