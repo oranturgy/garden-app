@@ -22,6 +22,10 @@ export function rainTier(mm: number): RainTier | null {
   return 'heavy'
 }
 
+export function tierRank(tier: RainTier): number {
+  return tier === 'light' ? 1 : tier === 'moderate' ? 2 : 3
+}
+
 export function plantGetsCredit(tier: RainTier, waterFrequencyDays: number): boolean {
   return tier !== 'light' || waterFrequencyDays <= SHALLOW_MAX_FREQUENCY_DAYS
 }

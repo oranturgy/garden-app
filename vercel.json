@@ -1,6 +1,7 @@
 {
   "crons": [
     { "path": "/api/cron/heat-check", "schedule": "0 4 * * *" },
-    { "path": "/api/cron/rain-check", "schedule": "5 4 * * *" }
+    { "path": "/api/cron/rain-check?slot=morning", "schedule": "5 4 * * *" },
+    { "path": "/api/cron/rain-check?slot=evening", "schedule": "0 16 * * *" }
   ]
 }
