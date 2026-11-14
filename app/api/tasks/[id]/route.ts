@@ -11,13 +11,17 @@ export async function PATCH(request: NextRequest, ctx: RouteContext<'/api/tasks/
             done  = COALESCE(?, done),
             title = COALESCE(?, title),
             notes = COALESCE(?, notes),
-            category = COALESCE(?, category)
+            category = COALESCE(?, category),
+            month = COALESCE(?, month),
+            week  = COALESCE(?, week)
           WHERE id = ?`,
     args: [
       body.done !== undefined ? (body.done ? 1 : 0) : null,
       body.title ?? null,
       body.notes !== undefined ? (body.notes ?? null) : null,
       body.category ?? null,
+      body.month ?? null,
+      body.week ?? null,
       id,
     ],
   })
